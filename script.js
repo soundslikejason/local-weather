@@ -1,7 +1,12 @@
 $(document).ready(function() {
-  function Weather() {
+  function weather() {
     $.ajax({
-      
+      url:,
+      type:,
+      dataType:,
+      success: function() {}
+
+
     });
   }
 });
