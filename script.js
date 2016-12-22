@@ -1,10 +1,10 @@
 $(document).ready(function() {
   function weather() {
     $.ajax({
-      url:,
-      type:,
-      dataType:,
-      success: function() {}
+      url: "http://ip-api.com/json",
+      type: 'GET',
+      dataType: 'jsonp',
+      success: function(data) {}
 
 
     });
