@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-  var latitude;
-  var longitude;
+  var city;
 
   weather();
 
@@ -11,18 +10,19 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'jsonp',
       success: function(data) {
-        latitude = data.lat;
-        longitude = data.lon;
+        city = data.city;
         $ajax({
-          url:,
-          data:,
-          cache:,
-          dataType:,
+          url: 'http://api.openweathermap.org/data/2.5/weather',
+          data: {
+            q = city;
+            units: 'imperial',
+            APPID:,
+          },
+          cache: false,
+          dataType: 'jsonp',
           success: function(data) {}
         });
       }
-
-
     });
   }
 });
