@@ -25,7 +25,7 @@ $(document).ready(function() {
           success: function(data) {
             temp = {
               fah: data.main.temp,
-              cel: (data.main.temp -32) * 5/9
+              cel: (data.main.temp - 32) * 5/9
             };
             temp.fah = Math.floor(temp.fah);
             temp.fah = temp.fah + '\xB0';
@@ -52,9 +52,9 @@ $(document).ready(function() {
     if (current === 'cel') {
       $(this).data('toggleTemp', 'fah');
       $('#toggleTemp').text("C");
-      return;
+    } else {
+      $(this).data('toggleTemp', 'cel');
+      $('#toggleTemp').text("F");
     }
-    $(this).data('toggleTemp', 'cel');
-    $('#toggleTemp').text("F");
   });
 });
