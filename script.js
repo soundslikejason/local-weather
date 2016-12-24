@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   function weather() {
     $.ajax({
-      url: "http://ip-api.com/json",
+      url: 'http://ip-api.com/json',
       type: 'GET',
       dataType: 'jsonp',
       success: function(data) {
@@ -16,7 +16,7 @@ $(document).ready(function() {
           data: {
             q = city;
             units: 'imperial',
-            APPID:,
+            APPID: '963d72389b606357f6ebf1e3e06bf292',
           },
           cache: false,
           dataType: 'jsonp',
