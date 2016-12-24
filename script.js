@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
   var city;
+  var temp;
+  var icon;
 
   weather();
 
@@ -11,16 +13,31 @@ $(document).ready(function() {
       dataType: 'jsonp',
       success: function(data) {
         city = data.city;
-        $ajax({
+        $.ajax({
           url: 'http://api.openweathermap.org/data/2.5/weather',
           data: {
-            q = city;
+            q: city,
             units: 'imperial',
-            APPID: '963d72389b606357f6ebf1e3e06bf292',
+            APPID: '963d72389b606357f6ebf1e3e06bf292'
           },
           cache: false,
           dataType: 'jsonp',
-          success: function(data) {}
+          success: function(data) {
+            temp = {
+              far: data.main.temp,
+              cel: (data.main.temp -32) * 5/9
+            };
+            temp.far = Math.floor(temp.far);
+            temp.far = temp.far + '\xB0';
+            temp.cel = Math.floor(temp.cel);
+            temp.cel = temp.cel + '\xB0';
+            icon = data.weather;
+            city = data.name;
+
+            $('#icon').html('<img src=http://openweathermap.org/img/w/' + icon[0]["icon"] + ".png>");
+            $('#temp').text(temp.far);
+            $('#city').text(city);
+          }
         });
       }
     });
