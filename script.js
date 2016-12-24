@@ -42,4 +42,19 @@ $(document).ready(function() {
       }
     });
   }
+  $('#toggleTemp').on('click', function(){
+    var current = $(this).data('toggleTemp');
+    if (current === undefined) {
+      current = 'cel';
+    }
+    $('#temp').text(temp[current]);
+
+    if (current === 'cel') {
+      $(this).data('toggleTemp', 'fah');
+      $('#toggleTemp').text("C");
+      return;
+    }
+    $(this).data('toggleTemp', 'cel');
+    $('#toggleTemp').text("F");
+  });
 });
