@@ -24,18 +24,18 @@ $(document).ready(function() {
           dataType: 'jsonp',
           success: function(data) {
             temp = {
-              far: data.main.temp,
+              fah: data.main.temp,
               cel: (data.main.temp -32) * 5/9
             };
-            temp.far = Math.floor(temp.far);
-            temp.far = temp.far + '\xB0';
+            temp.fah = Math.floor(temp.fah);
+            temp.fah = temp.fah + '\xB0';
             temp.cel = Math.floor(temp.cel);
             temp.cel = temp.cel + '\xB0';
             icon = data.weather;
             city = data.name;
 
             $('#icon').html('<img src=http://openweathermap.org/img/w/' + icon[0]["icon"] + ".png>");
-            $('#temp').text(temp.far);
+            $('#temp').text(temp.fah);
             $('#city').text(city);
           }
         });
