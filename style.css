@@ -1,0 +1,21 @@
+#icon img {
+  height: 100px;
+  width: auto;
+}
+
+.tempStyle {
+  font-size: 400%;
+}
+
+.locStyle {
+  font-size: 200%;
+}
+
+#toggleTemp {
+  cursor: pointer;
+  color: LightSteelBlue;
+}
+
+#toggleTemp:hover {
+  color: SteelBlue;
+}
