@@ -8,20 +8,20 @@ $(document).ready(function() {
 
   function weather() {
     $.ajax({
-      url: 'http://ip-api.com/json',
+      url: 'https://cors-anywhere.herokuapp.com/http://freegeoip.net/json/',
       type: 'GET',
-      dataType: 'jsonp',
+      dataType: 'json',
       success: function(data) {
         city = data.city;
         $.ajax({
-          url: 'http://api.openweathermap.org/data/2.5/weather',
+          url: 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather',
           data: {
             q: city,
             units: 'imperial',
             APPID: '963d72389b606357f6ebf1e3e06bf292'
           },
           cache: false,
-          dataType: 'jsonp',
+          dataType: 'json',
           success: function(data) {
             temp = {
               fah: data.main.temp,
